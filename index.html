@@ -119,6 +119,8 @@
   .item .role { color: var(--muted); font-weight: 400; }
   .item .date { color: var(--faint); font-size: 14px; white-space: nowrap; padding-top: 2px; }
   .item p { grid-column: 1 / -1; margin: 6px 0 0; color: var(--muted); }
+  .item h4 { grid-column: 1 / -1; font-size: 15px; font-weight: 600; margin: 16px 0 0; line-height: 1.4; }
+  .item h4 + p { margin-top: 4px; }
   @media (max-width: 600px) {
     .item { grid-template-columns: 1fr; }
     .item .date { padding-top: 0; }
@@ -138,6 +140,11 @@
     border: 1px solid var(--border); border-radius: 6px; padding: 5px 7px;
   }
   .card .more { font-size: 14px; font-weight: 600; }
+  .card details { margin: -4px 0 12px; font-size: 14px; color: var(--muted); }
+  .card summary { cursor: pointer; font-weight: 600; color: var(--text); }
+  .card details p { flex: none; margin: 8px 0 0; font-size: 14px; }
+  .card details ul { margin: 6px 0 0; padding-left: 18px; }
+  .card details li { margin: 3px 0; }
   .card.featured { grid-column: 1 / -1; border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
 
   .skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; }
@@ -164,7 +171,7 @@
     <a class="link" href="#experience">Experience</a>
     <a class="link" href="#projects">Projects</a>
     <a class="link" href="#research">Research</a>
-    <a class="link" href="Ayush_Kansal_Resume.pdf?v=63813c99">Resume</a>
+    <a class="link" href="Ayush_Kansal_Resume.pdf?v=b234562f">Resume</a>
     <button class="theme-toggle" id="theme" aria-label="Toggle dark mode">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
@@ -177,7 +184,7 @@
     <h1>Ayush Kansal</h1>
     <p class="lede">Computer Science at the University of Illinois Urbana-Champaign. I write battery-management firmware for an electric race car, build iOS and macOS apps, and do machine learning research on speech recognition.</p>
     <div class="actions">
-      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=63813c99">
+      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=b234562f">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         Resume
       </a>
@@ -260,6 +267,24 @@
           <a class="more" href="https://github.com/AtomicAyush/edge-ml-bench">View on GitHub →</a>
         </article>
         <article class="card">
+          <h3>BTC Survivor</h3>
+          <p>Can tiny neural networks learn to predict a market live, well enough to pay real costs? Populations of online-learning networks paper trade against coin-flip twins that trade at the same moments but pick their side by coin flip, and every expected outcome is written down before launch. Version 1 trades Bitcoin around the clock. Version 2, scheduled for October 19, will trade seven large tech stocks and QQQ and test whether news scored by Claude predicts the next 30 minutes.</p>
+          <details>
+            <summary>The experiments: v1 and v2</summary>
+            <p><strong>v1 · Bitcoin, live since Oct 2026.</strong> Six runs of 20 learners and 20 twins each:</p>
+            <ul>
+              <li><strong>A, main:</strong> does the 30-minute forecast correlate with the real move? Scored after 28 days of healthy data.</li>
+              <li><strong>B, low fee:</strong> the same schedule at a 5 bps fee instead of 90.</li>
+              <li><strong>C, machinery:</strong> starting at $500 so bots die, it checks that death, tournament replacement, mutation and lineage work live.</li>
+              <li><strong>D and D2, 4-hour horizon:</strong> do bigger moves let predictions clear costs, and what does strict feed-stall handling cost?</li>
+              <li><strong>E, frictionless:</strong> with fees, slippage and short charges set to zero, do the bots' own calls make money against their twins?</li>
+            </ul>
+            <p><strong>v2 · stocks and news, scheduled for Oct 19.</strong> S1 learns from prices only. S2 adds news from SEC filings, the Fed, BLS and market headlines, scored by Claude Haiku with FinBERT as fallback. Each S2 bot starts as an exact copy of its S1 counterpart, so any difference between the runs comes from news.</p>
+          </details>
+          <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">asyncio</span><span class="tag">SQLite</span><span class="tag">Claude API</span><span class="tag">FinBERT</span></div>
+          <span class="more"><a href="https://github.com/AtomicAyush/btc-survivor">View on GitHub →</a> · <a href="https://github.com/AtomicAyush/btc-survivor/tree/feat/v2-stocks">v2 branch →</a></span>
+        </article>
+        <article class="card">
           <h3>NoteFlash</h3>
           <p>iPhone and iPad app that turns notes, scanned pages, PDFs, slides, and Google Drive files into flashcard decks, written on-device with Apple Intelligence.</p>
           <div class="tags"><span class="tag">SwiftUI</span><span class="tag">SwiftData</span><span class="tag">Foundation Models</span></div>
@@ -283,12 +308,6 @@
           <div class="tags"><span class="tag">SwiftUI</span><span class="tag">AppKit</span></div>
           <a class="more" href="https://github.com/AtomicAyush/Islet">View on GitHub →</a>
         </article>
-        <article class="card">
-          <h3>BTC Survivor</h3>
-          <p>Evolutionary ML experiment: 20 small neural networks learn online from live Coinbase order-book data, evolve by mutation and tournament selection, and are judged against coin-flip twins. Paper trading only.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">SQLite</span></div>
-          <a class="more" href="https://github.com/AtomicAyush/btc-survivor">View on GitHub →</a>
-        </article>
       </div>
     </div>
   </section>
@@ -299,7 +318,12 @@
       <div class="item">
         <h3>ASDRP <span class="role">· Lead Researcher, Author, and Developer</span></h3>
         <span class="date">Jun 2024 – Jan 2026</span>
-        <p>Co-first author of <em>Evaluating the impact of playback speed for transcription accuracy</em>, under review at the <em>Journal of Emerging Investigators</em>. Benchmarked four speech recognition systems (Whisper, Azure, Deepgram, Google Cloud) across 150 hours of audio and four playback speeds, and found model-specific speed thresholds that cut transcription cost about 20% without losing accuracy. Also built an iOS app and an AI Google Chat bot used by 30+ lab groups and 1,100+ student researchers.</p>
+        <h4>Playback Speed and Transcription Accuracy <span class="role">· co-first author, under review at the <em>Journal of Emerging Investigators</em></span></h4>
+        <p>Benchmarked four speech recognition systems (Whisper, Azure, Deepgram, Google Cloud) on 150 hours of audio at four playback speeds. Errors rose with speed, most for fast speakers. At 1.25× speed, which cuts transcription cost 20%, Azure and Deepgram stayed under a 0.10 word error rate. I built the analysis pipeline in Python.</p>
+        <h4>ASDRP iOS App</h4>
+        <p>A team-built SwiftUI and Firebase app for the program's ~1,100 student researchers. I owned the LinkedIn-style student profile system.</p>
+        <h4>Meeting Reminder Bot</h4>
+        <p>A Python bot on Google Cloud that tags researchers in Google Chat when they miss the biweekly status form, and uses a GPT wrapper to check the quality of their updates.</p>
       </div>
       <div class="item">
         <h3>Osteoporosis Gait Sensor <span class="role">· Lead Developer and Designer</span></h3>
@@ -348,7 +372,7 @@
 <footer>
   <div class="wrap">
     <span>Ayush Kansal · Fremont, CA · <a href="mailto:kansalayush2008@gmail.com">kansalayush2008@gmail.com</a></span>
-    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=63813c99">Resume</a></span>
+    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=b234562f">Resume</a></span>
   </div>
 </footer>
 
