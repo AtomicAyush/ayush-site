@@ -119,8 +119,10 @@
   .item .role { color: var(--muted); font-weight: 400; }
   .item .date { color: var(--faint); font-size: 14px; white-space: nowrap; padding-top: 2px; }
   .item p { grid-column: 1 / -1; margin: 6px 0 0; color: var(--muted); }
-  .item h4 { grid-column: 1 / -1; font-size: 15px; font-weight: 600; margin: 16px 0 0; line-height: 1.4; }
-  .item h4 + p { margin-top: 4px; }
+  .item .sub { grid-column: 1 / -1; margin: 10px 0 0 2px; padding-left: 14px; border-left: 2px solid var(--border); }
+  .item .sub h4 { font-size: 13.5px; font-weight: 600; color: var(--muted); margin: 0; line-height: 1.4; }
+  .item .sub h4 .role { color: var(--faint); font-weight: 400; }
+  .item .sub p { margin: 2px 0 0; font-size: 15px; }
   @media (max-width: 600px) {
     .item { grid-template-columns: 1fr; }
     .item .date { padding-top: 0; }
@@ -171,7 +173,7 @@
     <a class="link" href="#experience">Experience</a>
     <a class="link" href="#projects">Projects</a>
     <a class="link" href="#research">Research</a>
-    <a class="link" href="Ayush_Kansal_Resume.pdf?v=b234562f">Resume</a>
+    <a class="link" href="Ayush_Kansal_Resume.pdf?v=ca8018ff">Resume</a>
     <button class="theme-toggle" id="theme" aria-label="Toggle dark mode">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
@@ -184,7 +186,7 @@
     <h1>Ayush Kansal</h1>
     <p class="lede">Computer Science at the University of Illinois Urbana-Champaign. I write battery-management firmware for an electric race car, build iOS and macOS apps, and do machine learning research on speech recognition.</p>
     <div class="actions">
-      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=b234562f">
+      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=ca8018ff">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         Resume
       </a>
@@ -318,12 +320,18 @@
       <div class="item">
         <h3>ASDRP <span class="role">· Lead Researcher, Author, and Developer</span></h3>
         <span class="date">Jun 2024 – Jan 2026</span>
-        <h4>Playback Speed and Transcription Accuracy <span class="role">· co-first author, under review at the <em>Journal of Emerging Investigators</em></span></h4>
-        <p>Benchmarked four speech recognition systems (Whisper, Azure, Deepgram, Google Cloud) on 150 hours of audio at four playback speeds. Errors rose with speed, most for fast speakers. At 1.25× speed, which cuts transcription cost 20%, Azure and Deepgram stayed under a 0.10 word error rate. I built the analysis pipeline in Python.</p>
-        <h4>ASDRP iOS App</h4>
-        <p>A team-built SwiftUI and Firebase app for the program's ~1,100 student researchers. I owned the LinkedIn-style student profile system.</p>
-        <h4>Meeting Reminder Bot</h4>
-        <p>A Python bot on Google Cloud that tags researchers in Google Chat when they miss the biweekly status form, and uses a GPT wrapper to check the quality of their updates.</p>
+        <div class="sub">
+          <h4>Playback Speed and Transcription Accuracy <span class="role">· co-first author, under review at the <em>Journal of Emerging Investigators</em></span></h4>
+          <p>Benchmarked four speech recognition systems (Whisper, Azure, Deepgram, Google Cloud) on 150 hours of audio at four playback speeds. Errors rose with speed, most for fast speakers. At 1.25× speed, which cuts transcription cost 20%, Azure and Deepgram stayed under a 0.10 word error rate. I built the analysis pipeline in Python.</p>
+        </div>
+        <div class="sub">
+          <h4>ASDRP iOS App</h4>
+          <p>A team-built SwiftUI and Firebase app for the program's ~1,100 student researchers. I owned the LinkedIn-style student profile system.</p>
+        </div>
+        <div class="sub">
+          <h4>Meeting Reminder Bot</h4>
+          <p>A Python bot on Google Cloud that tags researchers in Google Chat when they miss the biweekly status form, and uses a GPT wrapper to check the quality of their updates.</p>
+        </div>
       </div>
       <div class="item">
         <h3>Osteoporosis Gait Sensor <span class="role">· Lead Developer and Designer</span></h3>
@@ -372,7 +380,7 @@
 <footer>
   <div class="wrap">
     <span>Ayush Kansal · Fremont, CA · <a href="mailto:kansalayush2008@gmail.com">kansalayush2008@gmail.com</a></span>
-    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=b234562f">Resume</a></span>
+    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=ca8018ff">Resume</a></span>
   </div>
 </footer>
 
