@@ -173,7 +173,7 @@
     <a class="link" href="#experience">Experience</a>
     <a class="link" href="#projects">Projects</a>
     <a class="link" href="#research">Research</a>
-    <a class="link" href="Ayush_Kansal_Resume.pdf?v=0c5e389f">Resume</a>
+    <a class="link" href="Ayush_Kansal_Resume.pdf?v=8fc46dab">Resume</a>
     <button class="theme-toggle" id="theme" aria-label="Toggle dark mode">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
@@ -184,9 +184,9 @@
   <header class="wrap">
     <span class="eyebrow">Open to Summer 2027 internships</span>
     <h1>Ayush Kansal</h1>
-    <p class="lede">Computer Science at the University of Illinois Urbana-Champaign. I write battery-management firmware for an electric race car, build iOS and macOS apps, and do machine learning research on speech recognition.</p>
+    <p class="lede">Computer Science at the University of Illinois Urbana-Champaign. I write battery-management firmware for an electric race car, build iOS and macOS apps, and benchmark machine learning on edge hardware.</p>
     <div class="actions">
-      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=0c5e389f">
+      <a class="btn primary" href="Ayush_Kansal_Resume.pdf?v=8fc46dab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
         Resume
       </a>
@@ -232,7 +232,7 @@
       <div class="item">
         <h3>Lab AK <span class="role">· Co-Founder and Software Engineer</span></h3>
         <span class="date">Jan 2026 – Present</span>
-        <p>Led development of <a href="https://labak.ai">Model mAKe Smith</a>, a platform that ports, runs, and compares AI models on remote edge hardware through chip-vendor toolchains (starting with Cadence NeuroWeave), with side-by-side speed and accuracy results. Also led development of <a href="https://mma.labak.ai">Model Analyzer</a>, a free in-browser tool that inspects ONNX, TFLite, Keras, PyTorch, and TensorFlow models layer by layer, with weights and multiply-accumulate cost, without the model ever leaving the browser.</p>
+        <p>Led development of <a href="https://labak.ai">Model mAKe Smith</a>, a platform that ports, runs, and compares AI models on remote edge hardware through chip-vendor toolchains (starting with Cadence NeuroWeave), with side-by-side speed and accuracy results. Also led development of <a href="https://mma.labak.ai">Model Analyzer</a>, an in-browser tool that inspects ONNX, TFLite, Keras, PyTorch, and TensorFlow models layer by layer, with weights and multiply-accumulate cost, without the model ever leaving the browser. Model mAKe Smith also takes customers' own ONNX and TFLite models, float or INT8: each is checked, ported with the NPU on and off, and verified against the original. An INT8 YOLOX-nano person detector ran at 3,488 FPS on Cadence's Vision 341 DSP with the Neo 240 NPU, 25× faster than on the DSP alone (cycle-accurate simulation).</p>
       </div>
       <div class="item">
         <h3>PilotCity <span class="role">· Software Developer and Data Scientist</span></h3>
@@ -264,13 +264,13 @@
         </article>
         <article class="card">
           <h3>Edge ML Inference Benchmark</h3>
-          <p>How fast a real-time object detector runs on Apple silicon, and what speed costs in accuracy. YOLOv8n at FP32, FP16 and INT8 on the CPU, GPU and Neural Engine of an M4 Pro and an iPhone: 16-bit on the Neural Engine ran 8× faster than 32-bit on the CPU, at equal accuracy. Diagnosed why naive INT8 detects nothing, then recovered most of INT8's accuracy with per-channel calibration and per-layer mixed precision. An iPhone app runs the detector live on the camera; on a still photo, its full image-to-boxes pipeline takes 1.6 ms on the Neural Engine.</p>
+          <p>How fast a real-time object detector runs on Apple silicon, and what speed costs in accuracy. YOLOv8n at FP32, FP16 and INT8 on the CPU, GPU and Neural Engine of an M4 Pro and an iPhone: 16-bit on the Neural Engine ran 8× faster than 32-bit on the CPU, at equal accuracy. Diagnosed why naive INT8 detects nothing, then recovered most of INT8's accuracy with per-channel calibration and per-layer mixed precision. An iPhone app runs the detector live on the camera; on a still photo, its full image-to-boxes pipeline takes 1.6 ms on the Neural Engine. The INT8 recipe carries over to YOLOv8s, YOLOv8m and YOLO11n (within 1.5% of FP32 mAP). Its INT8 export findings are now in Ultralytics' documentation (merged <a href="https://github.com/ultralytics/ultralytics/pull/26705">pull request #26705</a>).</p>
           <div class="tags"><span class="tag">Core ML</span><span class="tag">ONNX Runtime</span><span class="tag">Quantization</span><span class="tag">SwiftUI</span><span class="tag">Python</span></div>
           <a class="more" href="https://github.com/AtomicAyush/edge-ml-bench">View on GitHub →</a>
         </article>
         <article class="card">
           <h3>BTC Survivor</h3>
-          <p>Can tiny neural networks learn to predict a market live, well enough to pay real costs? Populations of online-learning networks paper trade against coin-flip twins that trade at the same moments but pick their side by coin flip, and every expected outcome is written down before launch. Version 1 trades Bitcoin around the clock. Version 2, scheduled for October 19, will trade seven large tech stocks and QQQ and test whether news scored by Claude predicts the next 30 minutes.</p>
+          <p>Can tiny neural networks learn to predict a market live, well enough to pay real costs? Populations of online-learning networks paper trade against coin-flip twins that trade at the same moments but pick their side by coin flip, and every expected outcome is written down before launch. Version 1 trades Bitcoin around the clock. Version 2 runs from 21 October to about 17 December 2026 on seven large tech stocks and QQQ, in a test fixed before launch: does news, scored by Claude, predict the next 30 minutes?</p>
           <details>
             <summary>The experiments: v1 and v2</summary>
             <p><strong>v1 · Bitcoin, live since Oct 2026.</strong> Six runs of 20 learners and 20 twins each:</p>
@@ -281,10 +281,16 @@
               <li><strong>D and D2, 4-hour horizon:</strong> do bigger moves let predictions clear costs, and what does strict feed-stall handling cost?</li>
               <li><strong>E, frictionless:</strong> with fees, slippage and short charges set to zero, do the bots' own calls make money against their twins?</li>
             </ul>
-            <p><strong>v2 · stocks and news, scheduled for Oct 19.</strong> S1 learns from prices only. S2 adds news from SEC filings, the Fed, BLS and market headlines, scored by Claude Haiku with FinBERT as fallback. Each S2 bot starts as an exact copy of its S1 counterpart, so any difference between the runs comes from news.</p>
+            <p><strong>v2 · stocks and news, 21 Oct to about 17 Dec 2026.</strong> S1 learns from prices only. S2 adds news from SEC filings, the Federal Reserve, BLS and market headlines, scored by Claude Haiku with FinBERT as fallback. A cap in code limits model spending to $20 a month. Each S2 bot starts as an exact copy of its S1 counterpart, so any difference between the runs comes from news.</p>
           </details>
           <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">asyncio</span><span class="tag">SQLite</span><span class="tag">Claude API</span><span class="tag">FinBERT</span></div>
           <span class="more"><a href="https://github.com/AtomicAyush/btc-survivor">View on GitHub →</a> · <a href="https://github.com/AtomicAyush/btc-survivor/tree/feat/v2-stocks">v2 branch →</a></span>
+        </article>
+        <article class="card">
+          <h3>API Autopilot</h3>
+          <p>Co-developed with Ishaan Manoor: an open-source command-line tool and GitHub Action that upgrades JavaScript and TypeScript code when an SDK ships a breaking release, using signed migration rules, and opens a draft pull request with a replayable record of every change. Extended its call-site tracing from 16% to 98% of Mux SDK calls, and built rule drafting from two SDK releases, a watch mode for new npm major versions, and a type-check gate. On 63 public repositories upgrading Cloudflare's SDK from 6 to 7, the drafted rules fixed 125 of 246 type errors and introduced none.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">GitHub Actions</span><span class="tag">Static analysis</span></div>
+          <a class="more" href="https://github.com/ishaanman7898/API_Autopilot">View on GitHub →</a>
         </article>
         <article class="card">
           <h3>Islet</h3>
@@ -380,7 +386,7 @@
 <footer>
   <div class="wrap">
     <span>Ayush Kansal · Fremont, CA · <a href="mailto:kansalayush2008@gmail.com">kansalayush2008@gmail.com</a></span>
-    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=0c5e389f">Resume</a></span>
+    <span><a href="https://github.com/AtomicAyush">GitHub</a> · <a href="https://www.linkedin.com/in/kansalayush">LinkedIn</a> · <a href="Ayush_Kansal_Resume.pdf?v=8fc46dab">Resume</a></span>
   </div>
 </footer>
 
